@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app.light, .app:not(.dark) {
+  --bg-page: #f5f4fc;
+  --bg-card: #ffffff;
+  --shadow-card: 0 10px 30px rgba(147, 130, 242, 0.1);
+  --color-text: #0d0c1d;
+  --color-placeholder: #b5b3bc;
+  --border-input: #f0eff6;
+  --bg-input: #ffffff;
+  --bg-btn-toggle: transparent;
+  --border-btn-toggle: #7966f2;
+  --color-btn-toggle: #1f1d36;
+}
+
+.app.dark {
+  --bg-page: #131124;
+  --bg-card: #1c1a30;
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --color-text: #ffffff;
+  --color-placeholder: #524f6e;
+  --border-input: #272442;
+  --bg-input: #1c1a30;
+  --bg-btn-toggle: transparent;
+  --border-btn-toggle: #524f6e;
+  --color-btn-toggle: #ffffff;
+}
+
+:root {
+  --color-accent: #6c5ce7;
+  --color-accent-hover: #5b4ce3;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background-color: var(--bg-card);
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.top button {
+  background: var(--bg-btn-toggle);
+  border: 1px solid var(--border-btn-toggle);
+  color: var(--color-btn-toggle);
+  padding: 10px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.top button:hover {
+  opacity: 0.8;
+}
+
+form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+form input[type="text"] {
+  flex: 1;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-input);
+  color: var(--color-text);
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+form input[type="text"]::placeholder {
+  color: var(--color-placeholder);
+}
+
+form input[type="text"]:focus {
+  border-color: var(--color-accent);
+}
+
+/* Фиолетовая кнопка "Добавить" */
+form button {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* Список задач */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--border-input);
+}
+
+li span {
+  flex: 1;
+  font-size: 15px;
+}
+
+/* Стили для зачеркивания выполненной задачи */
+li.done span {
+  text-decoration: line-through;
+  color: var(--color-placeholder);
+}
+
+/* Кнопка удаления (крестик) */
+li button {
+  background: transparent;
+  border: none;
+  color: var(--color-placeholder);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+li button:hover {
+  color: #ff7675;
+}
+
+/* Скрытие лейбла для доступности (screen readers) */
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0 10px 0;
+}
+
+.tabs button {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid var(--border-input);
+  color: var(--color-text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Стили для выбранного фильтра */
+.tabs button.active {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+.muted {
+  font-size: 13px;
+  color: var(--color-placeholder);
+  margin-bottom: 15px;
+}
